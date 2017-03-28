@@ -9,6 +9,7 @@ function deck(){
 	this.names = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 	this.suits = ['H','D','S', 'C'];
 	var cards =[];
+	this.cheat=cheat ? cheat%52 : Math.floor((Math.random() * 52) + 1); 
     
     for( var i = 0; i < this.suits.length; i++ ) {
         for( var j = 0; j < this.names.length; j++ ) {
@@ -26,10 +27,9 @@ function deck(){
 
 Deck.prototype.shuffle = function(array){
 	for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+        array[i] = array[this.cheat];
+        array[this.cheat] = temp;
     }
     return array;
 }
