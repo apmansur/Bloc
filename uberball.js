@@ -26,7 +26,7 @@ function findBall(scales, ball_count) {
            return "something went wrong";
         }
     }
-    if (arrBalls.length=2 ){
+    if (arrBalls.length==2 ){
       var A =arrBalls[0];
       var B= arrBalls[1];
       var scale= getWeight(A,B);
